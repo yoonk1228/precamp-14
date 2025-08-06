@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬랙클론코딩</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .pink_bg {
+            background-color: rgba(177, 75, 182, 1);
+        }
+        .main_container {
+            display: flex;
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            /* 기준 넓이 1920px */
+            width: 1920px;
+            height: 1208px;
+            angle: 0 deg;
+            opacity: 1;
+            background-image: url('./images/BG1.png');
+        }
+        .header {
+            display: flex;
+            width: 100%;
+            height: 80px;
+            angle: 0 deg;
+            opacity: 1;
+            padding-top: 16px;
+            padding-right: 80px;
+            padding-bottom: 16px;
+            padding-left: 80px;
+            gap: 24px;
+        }
+        .left_header {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 376px;
+            height: 100%;
+            angle: 0 deg;
+            opacity: 1;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            gap: 16px;
+        }
+        .center_right_header {
+            width: 1360px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            angle: 0 deg;
+            opacity: 1;
+        }
+        .searchbar {
+            display: flex;
+            width: 920px;
+            height: 48px;
+            angle: 0 deg;
+            opacity: 1;
+            border-radius: 8px;
+            padding-top: 8px;
+            padding-right: 16px;
+            padding-bottom: 8px;
+            padding-left: 16px;
+            gap: 8px;
+            background-color: rgba(149, 92, 152, 1);
+        }
+        .search_placeholder {
+            font-family: Pretendard Variable;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 20px;
+            color: rgba(239, 230, 239, 1);
+            leading-trim: NONE;
+            line-height: 0px;
+            letter-spacing: 0%;
+        }
+        .right_header {
+            display: flex;
+            width: 163px;
+            height: 48px;
+            angle: 0 deg;
+            opacity: 1;
+            gap: 20px;
+        }
+        .customer_badge {
+            display: flex;
+            width: 111px;
+            height: 48px;
+            angle: 0 deg;
+            opacity: 1;
+            border-radius: 8px;
+            padding-top: 8px;
+            padding-right: 12px;
+            padding-bottom: 8px;
+            padding-left: 12px;
+            gap: 8px;
+            border-width: 1px;
+        }
+        .customer_name {
+            font-family: Pretendard Variable;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 18px;
+            color: rgba(239, 230, 239, 1);
+            leading-trim: NONE;
+            line-height: 0px;
+            letter-spacing: 0%;
+        }
+        .Vector {
+            width: 32px;
+            height: 32px;
+            angle: 0 deg;
+            opacity: 1;
+            align-self: center;
+        }
+        .body_container {
+            display: flex;
+            width: 100%;
+            height: 1048px;
+            min-height: 920px;
+        }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            width: 80px;
+            height: 1048px;
+            min-height: 920px;
+            justify-content: space-between;
+            angle: 0 deg;
+            opacity: 1;
+            padding-top: 16px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .top_sidebar {
+            display: flex;
+            flex-direction: column;
+            width: 40px;
+            height: 448px;
+            angle: 0 deg;
+            opacity: 1;
+            gap: 24px;
+        }
+        .bottom_sidebar {
+            display: flex;
+            flex-direction: column;
+            width: 40px;
+            height: 96px;
+            angle: 0 deg;
+            opacity: 1;
+            gap: 16px;
+        }
+        .sidemenu {
+            width: 400px;
+            height: 1048px;
+            min-height: 920px;
+            angle: 0 deg;
+            opacity: 1;
+            gap: 10px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            padding: 20px;
+            background-image: url('./images/Rectangle\ 43.png');
+        }
+        .body {
+            width: 1360px;
+            height: 1048px;
+            min-height: 920px;
+            angle: 0 deg;
+            opacity: 1;
+            padding-top: 40px;
+            padding-right: 60px;
+            padding-bottom: 40px;
+            padding-left: 60px;
+            gap: 40px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            background-image: url('./images/Rectangle\ 42.png');
+        }
+        .channel_image {
+            width: 40px;
+            height: 40px;
+            angle: 0 deg;
+            opacity: 1;
+            border-radius: 8px;
+        }
+        .frame147 {
+            display: flex;
+            flex-direction: column;
+            width: 40px;
+            height: 384px;
+            angle: 0 deg;
+            opacity: 1;
+            gap: 16px;
+        }
+        .sidebar_area {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40px;
+            height: 64px;
+            angle: 0 deg;
+            opacity: 1;
+            gap: 4px;
+        }
+        .sidebar_icon {
+            width: 40px;
+            height: 40px;
+            angle: 0 deg;
+            opacity: 1;
+            border-radius: 8px;
+            color: rgba(255, 255, 255, 0.1)
+        }
+        .sidebar_text {
+            font-family: Pretendard Variable;
+            font-weight: 600;
+            font-style: SemiBold;
+            font-size: 14px;
+            leading-trim: NONE;
+            line-height: 0px;
+            letter-spacing: 0%;
+            text-align: center;
+            color: rgba(228, 228, 228, 1);
+        }
+        .sidebar_plus_icon {
+            align-self: center;
+            width: 21.66666603088379px;
+            height: 21.66666603088379px;
+            angle: 0 deg;
+            opacity: 1;
+            top: 9.17px;
+            left: 9.17px;
+        }
+        .sidebar_plus_area {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            angle: 0 deg;
+            opacity: 1;
+            border-radius: 100px;
+            background-color: (255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="main_container">
+        <div class="header">
+            <div class="left_header">
+                <img class="time" src="./images/time.png">
+                <img class="arrow_right" src="./images/arrow_right.png">
+                <img class="arrow_left" src="./images/arrow_left.png">
+            </div>
+            <div class="center_right_header">
+                <div class="searchbar">
+                    <img class="search" src="./images/search.png">
+                    <p class="search_placeholder">수강생을 검색해 보세요.</p>
+                </div>
+                <div class="right_header">
+                    <div class="customer_badge">
+                        <img class="logo_codecamp" src="./images/logo_codecamp.png">
+                        <p class="customer_name">수강생</p>
+                    </div>
+                    <img class="Vector" src="./images/Vector.png">
+                </div>
+            </div>
+        </div>
+        <div class="body_container">
+            <div class="sidebar">
+                <div class="top_sidebar">
+                    <img class="channel_image" src="./images/채널 이미지.png">
+                    <div class="frame147">
+                        <div class="sidebar_area">
+                            <img class="sidebar_icon" src="./images/home.png">
+                            <p class="sidebar_text">홈</p>
+                        </div>
+                        <div class="sidebar_area">
+                            <img class="sidebar_icon" src="./images/communication.png">
+                            <p class="sidebar_text">대화</p>
+                        </div>
+                        <div class="sidebar_area">
+                            <img class="sidebar_icon" src="./images/notifications.png">
+                            <p class="sidebar_text">알림</p>
+                        </div>
+                        <div class="sidebar_area">
+                            <img class="sidebar_icon" src="./images/bookmark.png">
+                            <p class="sidebar_text">북마크</p>
+                        </div>
+                        <div class="sidebar_area">
+                            <img class="sidebar_icon" src="./images/more_meatball.png">
+                            <p class="sidebar_text">더보기</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom_sidebar">
+                    <div class="sidebar_plus_area">
+                        <img class="sidebar_plus_icon" src="./images/plus.png">
+                    </div>
+                    <div class="sidebar_plus_area pink_bg" style="border-radius: 8px;">
+                        <img class="sidebar_icon" src="./images/17.png">
+                    </div>
+                </div>
+            </div>
+            <div class="sidemenu">
+                <div class="frame165">
+                    <div class="channelname_area"></div>
+                    <div class="showpledge_button"></div>
+                    <div class="divider"></div>
+                    <div class="frame158"></div>
+                </div>
+            </div>
+            <div class="body">
+
+            </div>    
+        </div>
+    </div>
+</body>
+</html>
